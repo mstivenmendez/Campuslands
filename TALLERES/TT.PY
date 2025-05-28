@@ -1,7 +1,9 @@
 
+
 despensa  = []
 ingresos = []
 def menu_crud():
+   
     while True:
         print("\nMenu CRUD")
         print("1. Agregar producto")
@@ -9,7 +11,8 @@ def menu_crud():
         print("3. Eliminar producto")
         print("4. Listar productos")
         print("5. Salir")
-
+        opcion = input("Seleccione una opción: ")
+"""""
         def agregar_producto():
             nombre = input("Ingrese el nombre del producto: ")
             cantidad = int(input("Ingrese la cantidad del producto: "))
@@ -46,7 +49,7 @@ def menu_crud():
 
         opcion = input("Seleccione una opción: ")
 
-        if opcion == '1': 
+        if opcion == '1':
             agregar_producto()
         elif opcion == '2':
             actualizar_producto()
@@ -60,6 +63,8 @@ def menu_crud():
             print("Opción no válida, intente de nuevo.")
     
 # Llamada a la función para iniciar el menú CRUD
+if __name__ == "__main__":
+    menu_crud() 
 # Este código implementa un menú CRUD para gestionar productos en una despensa.
 # Permite agregar, actualizar, eliminar y listar productos.
-# El menú se ejecuta en un bucle hasta que el usuario decide salir.
+# El menú se ejecuta en un bucle hasta que el usuario decide salir.SS """
