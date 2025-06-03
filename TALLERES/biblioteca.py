@@ -40,10 +40,6 @@ def menu_principal():
     print("0. SALIR")
     print("=====================================")
 
-def codigo_aleatorio(mayor: int, lim_menos: int = 1000, lim_mayor: int = 10000000):
-    numero = random.randint(lim_menos, lim_mayor)
-    print(f"El código aleatorio generado es: {numero}")
-
 
 def sub_menu():
 
@@ -255,6 +251,12 @@ def archivar_prestamos(ingrese = list, mayor = dict):
     listar_libros()
     codigoaux = validacion_ingreso(f"Ingrese el código del libro a prestar: \n", 1, 100000)
 
+    for libro in mayor["prestamos"]:
+        if libro["codigo_libro"] == codigoaux:
+            espacio()
+            print(f"El libro con código {codigoaux} ya está prestado.")
+            espacio()
+            return
     for libro in mayor["libros"]:
         if libro["codigo"] == codigoaux:
             print(f"Libro encontrado: su codigo es:  {libro['codigo']} su nombre es: {libro['titulo']}")
@@ -266,6 +268,7 @@ def archivar_prestamos(ingrese = list, mayor = dict):
         print(f"No se encontró un libro con el código {codigoaux}.")
         espacio()
         return
+    
 
     prestamo = nuevo_prestamo (
         usuario = validar_texto(f"Ingrese su nombre de usuario: \n"),
@@ -273,9 +276,10 @@ def archivar_prestamos(ingrese = list, mayor = dict):
         nombrelibro = nombrelibro,
         codigo_librop = codigolibro
     )
+
+    
     espacio()
     mayor["prestamos"].append(prestamo)
-    listar_prestamos()
 
 def listar_libros():
     # Función para listar los libros
@@ -368,7 +372,6 @@ while True:
             sub_opcion1 = validacion_ingreso_sub_menu_principal(f"ELIGE UNA OPCION:  \n", 0, 4)
             espacio()
             rango_clear_screen(sub_opcion1, 0, 4)
-            codigo_aleatorio(1000, 10000000)
 
             if sub_opcion1 == 1:
                 print("AÑADIENDO LIBRO...")
