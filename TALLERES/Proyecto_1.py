@@ -16,6 +16,7 @@ while opcion:
    print("4. CANTIDAD DE PARES DEL NUMERO QUE ACABO  DE INGRESAR")
    print("5. CANTIDAD DE IMPARES DEL NUMERO QUE ACABO  DE INGRESAR")
    print("0. DESEA SALIR:")
+   print("-----------------------------------")
    contador = int(input("INGRESE SU OPCION \n"))
 
    while contador > 5 or contador < 0:
